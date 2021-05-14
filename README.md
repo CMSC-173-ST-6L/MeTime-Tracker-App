@@ -30,4 +30,4 @@ If react-scripts is not present in package.json, run:
 NOTE: Use this space to attach useful examples of how the project can be used (e.g. screenshots, code examples and demos).
 
 ## Project Link
-https://github.com/CMSC128-C3L/ICS-Online-Library-System-Project
+https://github.com/CMSC-173-ST-6L/MeTime-Tracker-App
