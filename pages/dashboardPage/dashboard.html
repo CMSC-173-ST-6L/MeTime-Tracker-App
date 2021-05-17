@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>MeTime/dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <input type="checkbox" id="sidebar-toggle">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3 class="brand">
+                <span class="ti-unlink"></span> 
+                <span>MeTime</span>
+            </h3> 
+            <label for="sidebar-toggle" class="ti-menu-alt"></label>
+        </div>
+        
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="ti-home"></span>
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-calendar"></span>
+                        <span>Planner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-agenda"></span>
+                        <span>Journal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-face-smile"></span>
+                        <span>Mood Tracker</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-time"></span>
+                        <span>Energy Level</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-book"></span>
+                        <span>Contacts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../index.html">
+                        <span class="ti-arrow-left"></span>
+                        <span>Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <div class="main-content">
+        <header>
+            <div class="search-wrapper">
+                <span class="ti-search" style="padding-right: 15px;"></span>
+                <input type="search" placeholder="Search. .">
+            </div>
+            
+            <div class="social-icons">
+                <span class="ti-bell"></span>
+                <span class="ti-youtube"></span>
+                <span class="ti-twitter"></span>
+                <span class="ti-facebook"></span>
+                <div></div>
+            </div>
+        </header>
+        
+        <main>
+            
+            <h1 class="dash-title">YOU ARE IN THE MOOD FOR A YOGA! </h1>
+            
+            <div class="dash-cards">
+                <div class="card-single-a">
+                    <div class="card-body">
+                        <span class="ti-calendar"></span>
+                        <div>
+                            <h5>PLANNER</h5>
+                            <h4>Got plans today?</h4>
+                        </div>
+                    </div>
+                    <div class="card-footer-a">
+                        <a href="">Set A Plan</a>
+                    </div>
+                </div>
+                
+                <div class="card-single-b">
+                    <div class="card-body">
+                        <span class="ti-agenda"></span>
+                        <div>
+                            <h5>JOURNAL</h5>
+                            <h4>List your thoughts here!</h4>
+                        </div>
+                    </div>
+                    <div class="card-footer-b">
+                        <a href="">Write your memories</a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <section class="recent">
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h2>MOOD TRACKER</h2>
+                        
+                        <div class="table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Task/Activity</th>
+                                        <th>Date</th>
+                                        <th>Mood</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Create a Keto Breakfast</td>
+                                        <td>15 May, 2021</td>
+                                        <td>
+                                            <span class="badge happy">Happy</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Go for a 30-minute body massage</td>
+                                        <td>16 May, 2021</td>
+                                        <td>
+                                            <span class="badge uncomfortable">Uncomfortable</span>
+                                        </td>
+                                    </tr> 
+                                    <tr>
+                                        <td>Take afternoon off and go to cinema</td>
+                                        <td>17 May, 2020</td>
+                                        <td>
+                                            <span class="badge bad">Bad</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Play your favorite game pew pew!</td>
+                                        <td>18 May, 2021</td>
+                                        <td>
+                                            <span class="badge ecstatic">Ecstatic</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Just do half day and complete your business</td>
+                                        <td>19 May, 2021</td>
+                                        <td>
+                                            <span class="badge fair">Fair</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="summary">
+                        <div class="summary-card">
+                            <div class="summary-single">
+                                <span class="ti-calendar"></span>
+                                <div>
+                                    <h5>12</h5>
+                                    <small>Plans for Month of May</small>
+                                </div>
+                            </div>
+                            <div class="summary-single">
+                                <span class="ti-agenda"></span>
+                                <div>
+                                    <h5>5</h5>
+                                    <small>Number of Reflection</small>
+                                </div>
+                            </div>
+                            <div class="summary-single">
+                                <span class="ti-face-smile"></span>
+                                <div>
+                                    <h5>3</h5>
+                                    <small>You are mostly happy!</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="energy-card">
+                            <div class="energy-flex">
+                                <div class="energy-img"></div>
+                                <div class="energy-info">
+                                    <h5>ENERGY TRACKER</h5>
+                                    <small>You are energetic!</small>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button>
+                                    <span class="ti-clipboard"></span>
+                                    TRACK ENERGY
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        
+    </div>
+    
+</body>
+</html>
