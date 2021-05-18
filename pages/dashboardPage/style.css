@@ -384,6 +384,9 @@ tbody tr:nth-child(even) {
     overflow-x: auto;
 }
 
+
+
+
 @media only screen and (max-width: 1200px) {
     .sidebar {
         width: 60px;

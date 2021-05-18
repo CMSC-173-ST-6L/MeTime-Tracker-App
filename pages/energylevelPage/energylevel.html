@@ -11,9 +11,10 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    
+  
     <input type="checkbox" id="sidebar-toggle">
     <div class="sidebar">
         <div class="sidebar-header">
@@ -91,32 +92,68 @@
         
         <main>
             
-            <h1 class="dash-title"> OH NOE! YOU ARE NOT ENERGTIC TODAY :( </h1>
+            <h1 class="dash-title"> OH YES! YOU ARE ENERGETIC TONIGHT! :) </h1>
             
             <div class="dash-cards">
                 <div class="card-single-a">
                     <div class="card-body">
-                        <span class="ti-calendar"></span>
-                        <div>
-                            <h5>TASK</h5>
-                            <h4>Make sure to do this task to maximize your energy</h4>
-                        </div>
-                    </div>
-                    <div class="card-footer-a">
-                        <a href="">Do task now</a>
+                        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+                        <script>
+                            window.onload = function () {
+                            
+                            var chart = new CanvasJS.Chart("chartContainer", {
+                                animationEnabled: true,
+                                theme: "light2", // "light1", "light2", "dark1", "dark2"
+                                title: {
+                                    text: "Daily Energy Level"
+                                },
+                                axisY: {
+                                    title: "Rating (scale of 1-10)",
+                                    suffix: ""
+                                },
+                                axisX: {
+                                    title: "Time of the day"
+                                },
+                                data: [{
+                                    type: "column",
+                                    yValueFormatString: "#,##0.0#\"\"",
+                                    dataPoints: [
+                                        { label: "10am", y: 3.1 },	
+                                        { label: "11am", y: 6.70 },	
+                                        { label: "12pm", y: 5.00 },
+                                        { label: "1pm", y: 2.50 },	
+                                        { label: "2pm", y: 2.30 },
+                                        { label: "3pm", y: 1.80 },
+                                        { label: "4pm", y: 6.60 },
+                                        { label: "5pm", y: 9.00 }
+                                        
+                                    ]
+                                }]
+                            });
+                            chart.render();
+                            
+                            }
+                            </script>
                     </div>
                 </div>
                 
                 <div class="card-single-b">
                     <div class="card-body">
-                        <span class="ti-agenda"></span>
                         <div>
-                            <h5>YOU ENERGY LEVEL</h5>
-                            <h4>Low very very low mygawd!</h4>
+                            <h1>MAY 18, 2021</h1>
+                            <h2>ENERGY LEVEL RECORD</h2>
+                            <h4>You walked 10 miles</h4>
+                            <h5>Reduced Energy Level by 2</h5>
+                            <h4>You had a good nap</h4>
+                            <h5>Increased Energy Level by 4</h5>
+                            <h4>You danced all night</h4>
+                            <h5>Reduced Energy Level by 5</h5>
                         </div>
                     </div>
                     <div class="card-footer-b">
-                        <a href="">Track your energy</a>
+                        <a href="energylevel.html">Track your energy</a>
                     </div>
                 </div>
             </div>
