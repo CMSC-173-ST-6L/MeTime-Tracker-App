@@ -268,7 +268,7 @@ body {
 }
 .main-content .frame{
 top:-50px;
-  left:290%;
+  left:150%;
 }
 
 header {
@@ -427,10 +427,10 @@ header {
 .sticky_title{
   position: relative;
   font-family: Brush Script MT, cursive;
-  left: 290px;
-  top:216px;
+  left: 210px;
+  top:185px;
   color:black;
-  font-size:60px;
+  font-size:40px;
 
 }
 
