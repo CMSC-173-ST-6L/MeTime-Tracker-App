@@ -7,8 +7,8 @@ $off_white:#fafafa;
 
 .frame{
 
-  position: fixed;
-  left:60%;
+  position: relative;
+
   margin:100px auto;
   width:100px;
 
@@ -210,7 +210,6 @@ body {
     transition: width 500ms;
 
 }
-
 .sidebar-header {
     display: flex;
     justify-content: space-between;
@@ -265,6 +264,11 @@ body {
     position: relative;
     margin-left: 240px;
     transition: margin-left 500ms;
+
+}
+.main-content .frame{
+top:-50px;
+  left:290%;
 }
 
 header {
@@ -322,7 +326,7 @@ header {
 .board{
   position: absolute;
   top: 150px;
-  left:140px;
+  left:60px;
   width: 700px;
   height: 500px;
 }
@@ -331,7 +335,7 @@ header {
   font-weight: normal;
   position: absolute;
   top:250px;
-  left:200px;
+  left:130px;
   font-size:10pt;
   height:150px;
   width: 150px;
@@ -349,7 +353,7 @@ header {
   font-weight: normal;
   position: absolute;
   top:250px;
-  left:630px;
+  left:530px;
   font-size:10pt;
   height:150px;
   width: 150px;
@@ -367,7 +371,7 @@ header {
   font-weight: normal;
   position: absolute;
   top:450px;
-  left:200px;
+  left:130px;
   font-size:10pt;
   height:150px;
   width: 150px;
@@ -385,7 +389,7 @@ header {
   font-weight: normal;
   position: absolute;
   top:450px;
-  left:630px;
+   left:530px;
   font-size:10pt;
   height:150px;
   width: 150px;
@@ -403,7 +407,7 @@ header {
   font-weight: normal;
   position: absolute;
   top:340px;
-  left:430px;
+  left:340px;
   font-size:10pt;
   height:150px;
   width: 150px;
@@ -421,9 +425,9 @@ header {
 
 
 .sticky_title{
-  position: fixed;
+  position: relative;
   font-family: Brush Script MT, cursive;
-  left: 370px;
+  left: 290px;
   top:216px;
   color:black;
   font-size:60px;
@@ -435,8 +439,8 @@ header {
   cursor: pointer;
   width: 100px;
   background-color: #fA8072;
-  position: fixed;
-  left: 440px;
+  position: absolute;
+  left: 370px;
   top:570px;
   color:black;
   font-size:20px;
