@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>MeTime/energylevel</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <input type="checkbox" id="sidebar-toggle">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3 class="brand">
+                <span class="ti-unlink"></span> 
+                <span>MeTime</span>
+            </h3> 
+            <label for="sidebar-toggle" class="ti-menu-alt"></label>
+        </div>
+        
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="../dashboardPage/dashboard.html">
+                        <span class="ti-home"></span>
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-calendar"></span>
+                        <span>Planner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-agenda"></span>
+                        <span>Journal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-face-smile"></span>
+                        <span>Mood Tracker</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="energylevel.html">
+                        <span class="ti-time"></span>
+                        <span>Energy Level</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-book"></span>
+                        <span>Contacts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../index.html">
+                        <span class="ti-arrow-left"></span>
+                        <span>Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <div class="main-content">
+        <header>
+            <div class="search-wrapper">
+                <span class="ti-search" style="padding-right: 15px;"></span>
+                <input type="search" placeholder="Search. .">
+            </div>
+            
+            <div class="social-icons">
+                <span class="ti-bell"></span>
+                <span class="ti-youtube"></span>
+                <span class="ti-twitter"></span>
+                <span class="ti-facebook"></span>
+                <div></div>
+            </div>
+        </header>
+        
+        <main>
+            
+            <h1 class="dash-title"> OH NOE! YOU ARE NOT ENERGTIC TODAY :( </h1>
+            
+            <div class="dash-cards">
+                <div class="card-single-a">
+                    <div class="card-body">
+                        <span class="ti-calendar"></span>
+                        <div>
+                            <h5>TASK</h5>
+                            <h4>Make sure to do this task to maximize your energy</h4>
+                        </div>
+                    </div>
+                    <div class="card-footer-a">
+                        <a href="">Do task now</a>
+                    </div>
+                </div>
+                
+                <div class="card-single-b">
+                    <div class="card-body">
+                        <span class="ti-agenda"></span>
+                        <div>
+                            <h5>YOU ENERGY LEVEL</h5>
+                            <h4>Low very very low mygawd!</h4>
+                        </div>
+                    </div>
+                    <div class="card-footer-b">
+                        <a href="">Track your energy</a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <section class="recent">
+                <div class="activity-grid">
+                    <div class="activity-card">
+                        <h2>TRACK YOUR DISTANCE</h2>
+                        
+                        <div class="table-responsive">
+                            <iframe class = "googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3868.5418174567317!2d121.23943125822794!3d14.163013561459122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xae2c994b6cf207e9!2sUP%20Los%20Ba%C3%B1os%20-%20UPLB!5e0!3m2!1sen!2sph!4v1621329295028!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="summary">
+                        <div id="stopwatch">
+                            
+                            <!-- [DISPLAY TIMER] -->
+                            <div id="sw-time">
+                                00:00:00
+                            </div>
+                            <div class="controls">
+                                <!-- [RESET BUTTON] -->
+                                <button value="Reset" id="sw-rst" disabled><i class="fa fa-stop"></i></button>
+                                <!-- [START/STOP BUTTON] -->
+                                <button value="Start" id="sw-go"><i class="fa fa-play"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+        </main>
+        
+    </div>
+    
+</body>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $('#sw-go').click(function(){
+    $(this).find('i').toggleClass('fa-play fa-pause')
+  });
+  $('#sw-rst').click(function(){
+    $('#sw-go').find('i').removeClass('fa-pause').addClass('fa-play')
+  });
+
+
+  var sw = {
+    /* [INIT] */
+    etime : null, // holds HTML time display
+    erst : null, // holds HTML reset button
+    ego : null, // holds HTML start/stop button
+    timer : null, // timer object
+    now : 0, // current timer
+    init : function () {
+      // Get HTML elements
+      sw.etime = document.getElementById("sw-time");
+      sw.erst = document.getElementById("sw-rst");
+      sw.ego = document.getElementById("sw-go");
+
+      // Attach listeners
+      sw.erst.addEventListener("click", sw.reset);
+      sw.erst.disabled = false;
+      sw.ego.addEventListener("click", sw.start);
+      sw.ego.disabled = false;
+    },
+
+    /* [ACTIONS] */
+    tick : function () {
+    // tick() : update display if stopwatch running
+
+      // Calculate hours, mins, seconds
+      sw.now++;
+      var remain = sw.now;
+      var hours = Math.floor(remain / 3600);
+      remain -= hours * 3600;
+      var mins = Math.floor(remain / 60);
+      remain -= mins * 60;
+      var secs = remain;
+
+      // Update the display timer
+      if (hours<10) { hours = "0" + hours; }
+      if (mins<10) { mins = "0" + mins; }
+      if (secs<10) { secs = "0" + secs; }
+      sw.etime.innerHTML = hours + ":" + mins + ":" + secs;
+    },
+
+    start : function () {
+    // start() : start the stopwatch
+
+      sw.timer = setInterval(sw.tick, 1000);
+      sw.ego.removeEventListener("click", sw.start);
+      sw.ego.addEventListener("click", sw.stop);
+    },
+
+    stop  : function () {
+    // stop() : stop the stopwatch
+
+      clearInterval(sw.timer);
+      sw.timer = null;
+      sw.ego.removeEventListener("click", sw.stop);
+      sw.ego.addEventListener("click", sw.start);
+    },
+
+    reset : function () {
+    // reset() : reset the stopwatch
+
+      // Stop if running
+      if (sw.timer != null) { sw.stop(); }
+
+      // Reset time
+      sw.now = -1;
+      sw.tick();
+    }
+  };
+
+  window.addEventListener("load", sw.init);
+</script>
+</html>

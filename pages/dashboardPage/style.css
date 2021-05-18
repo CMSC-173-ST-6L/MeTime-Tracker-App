@@ -369,9 +369,9 @@ tbody tr:nth-child(even) {
     text-align: center;
 }
 
-.text-center button {
-    background: var(--main-color);
-    color: #fff;
+.text-center a {
+    background: rgb(255, 163, 109);
+    color: rgb(255, 255, 255);
     border: 1px solid var(--main-color);
     border-radius: 4px;
     padding: .4rem 1rem;
