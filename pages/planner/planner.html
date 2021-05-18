@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    <p style="text-align:center"> Planner </p>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+<link href = "style.css" rel="stylesheet">
+</head>
+<body>
+
+    
+
+
+
+</body>
+
+  <input type="checkbox" id="sidebar-toggle">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3 class="brand">
+                <span class="ti-unlink"></span> 
+                <span>MeTime</span>
+            </h3> 
+            <label for="sidebar-toggle" class="ti-menu-alt"></label>
+        </div>
+        
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="ti-home"></span>
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="planner.html">
+                        <span class="ti-calendar"></span>
+                        <span>Planner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-agenda"></span>
+                        <span>Journal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-face-smile"></span>
+                        <span>Mood Tracker</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-time"></span>
+                        <span>Energy Level</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-book"></span>
+                        <span>Contacts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../index.html">
+                        <span class="ti-arrow-left"></span>
+                        <span>Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+     <div class="main-content">
+      <img src="img/board.jpg" class="board" >
+  <p class="sticky_title">Sticky Note</p>
+
+<textarea class="stick1" name="detail" > </textarea>
+<textarea class="stick2" name="detail" > </textarea>
+<textarea class="stick3" name="detail" > </textarea>
+<textarea class="stick4" name="detail" > </textarea>
+<textarea class="stick5" name="detail" > </textarea>
+<button type="save" class="button" value="Submit">Save</button>
+
+
+
+
+
+
+<div class="frame">
+  <div class="planner">
+    <div class="header">
+      <h1 class = "header_title">Welcome Back</h1>
+    </div>
+
+
+    <div class="calendar">
+      <div class="plan">
+        <div class="title">Today</div>
+        <div class="time" id="time"></div>
+        <div class="add">
+        </div>
+      </div>
+    </div>
+     <script>
+       var yourDate = new Date()
+       const offset = yourDate.getTimezoneOffset()
+        yourDate = new Date(yourDate.getTime() - (offset*60*1000))
+        var strdate=yourDate.toISOString().split('T')[0];
+        strdate=strdate.split("-");
+        var tdate="";
+        switch(strdate[1]){
+          case "01":
+           tdate+="January ";
+          break;
+          case "02":
+           tdate+="February ";
+          break;
+          case "03":
+           tdate+="March ";
+          break;
+          case "04":
+           tdate+="April ";
+          break;
+          case "05":
+           tdate+="May ";
+          break;
+          case "06":
+           tdate+="June ";
+          break;
+          case "07":
+           tdate+="July ";
+          break;
+          case "08":
+           tdate+="August ";
+          break;
+          case "09":
+           tdate+="September ";
+          break;
+          case "10":
+           tdate+="October ";
+          break;
+          case "11":
+           tdate+="November ";
+          break;
+          case "12":
+           tdate+="December ";
+          break;
+
+        }
+
+        tdate+=strdate[2];
+        tdate+=", ";
+        tdate+=strdate[0];
+
+
+        var time = document.getElementById("time");
+        time.innerHTML=tdate;
+        
+      </script>
+
+    <div class="calendar_events">
+      <p class="ce_title">Events</p>
+      <div class="event">
+        <div class="ei_Dot dot_active"></div>
+        <div class="ei_Title">8:00 am</div>
+        <div class="ei_Copy">Start of class</div>
+      </div>
+      <div class="event">
+        <div class="ei_Dot"></div>
+        <div class="ei_Title">12:00 pm</div>
+        <div class="ei_Copy">Lunch</div>
+      </div>
+      <div class="event">
+        <div class="ei_Dot"></div>
+        <div class="ei_Title">13:00 pm</div>
+        <div class="ei_Copy">Presentation for final design <br> #GOODLUCK</div>
+      </div>
+     
+    </div>
+  </div>
+
+
+    <header>
+            <div class="search-wrapper">
+                <span class="ti-search" style="padding-right: 15px;"></span>
+                <input type="search" placeholder="Search. .">
+            </div>
+            
+            <div class="social-icons">
+                <span class="ti-bell"></span>
+                <span class="ti-youtube"></span>
+                <span class="ti-twitter"></span>
+                <span class="ti-facebook"></span>
+                <div></div>
+            </div>
+        </header>
+      </div>
+
+
+
+
+ 
+
+</html>
