@@ -183,7 +183,7 @@ main {
 
 .card-body span {
     font-size: 1.5rem;
-    color: #777;
+    color: rgb(0, 0, 0);
     padding-right: 1.4rem;
 }
 
@@ -224,11 +224,14 @@ main {
 
 .activity-grid {
     display: grid;
-    grid-template-columns: 75% 25%;
-    grid-column-gap: 1.5rem;
+    grid-template-columns: 70% 25%;
+    grid-column-gap: 3.5rem;
 }
 
-.activity-card,
+.activity-card{
+    background: #eecee3;
+    border-radius: 7px;
+}
 .summary-card,
 .energy-card {
     background: #fdf1ea;
@@ -246,7 +249,7 @@ main {
 }
 
 .activity-card thead {
-    background: #af7856;
+    background: #a5678e;
     text-align: left;
 }
 
@@ -261,7 +264,7 @@ td {
 }
 
 tbody tr:nth-child(even) {
-    background: #f9fafc;
+    background: #a5678e;
 }
 
 .badge {
