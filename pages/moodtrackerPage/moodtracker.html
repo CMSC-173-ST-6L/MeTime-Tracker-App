@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>MeTime/dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <input type="checkbox" id="sidebar-toggle">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3 class="brand">
+                <span class="ti-unlink"></span> 
+                <span>MeTime</span>
+            </h3> 
+            <label for="sidebar-toggle" class="ti-menu-alt"></label>
+        </div>
+        
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <span class="ti-home"></span>
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../plannerPage/planner.html">
+                        <span class="ti-calendar"></span>
+                        <span>Planner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-agenda"></span>
+                        <span>Journal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../moodtrackerPage/moodtracker.html">
+                        <span class="ti-face-smile"></span>
+                        <span>Mood Tracker</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../energylevelPage/energylevel.html">
+                        <span class="ti-time"></span>
+                        <span>Energy Level</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-book"></span>
+                        <span>Contacts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../index.html">
+                        <span class="ti-arrow-left"></span>
+                        <span>Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <div class="main-content">
+        <header>
+            <div class="search-wrapper">
+                <span class="ti-search" style="padding-right: 15px;"></span>
+                <input type="search" placeholder="Search. .">
+            </div>
+            
+            <div class="social-icons">
+                <span class="ti-bell"></span>
+                <span class="ti-youtube"></span>
+                <span class="ti-twitter"></span>
+                <span class="ti-facebook"></span>
+                <div></div>
+            </div>
+        </header>
+        
+        <main>
+            
+            <h1 class="dash-title">MOOD TRACKER </h1>
+            
+            <div class="dash-cards">
+                <div class="card-single-a">
+                    <div class="card-body">
+                        <span class="ti-face-smile"></span>
+                        <div>
+                            <h5 class = "card-header-a">DAILY MOOD CHECKER</h5>
+                            <h4>How is your mood today?</h4>
+                        </div>
+                    </div>
+                    <div class="card-footer-a">
+                        <a> Select today's mood: &emsp; </a>
+                            <div class="dropdown">
+                                <button class="dropbtn2">Happy</button>
+                                <div class="dropdown-content">
+                                    <a href="#">Ecstatic</a>
+                                    <a href="#">Happy</a>
+                                    <a href="#">Fair</a>
+                                    <a href="#">Uncomfortable</a>
+                                    <a href="#">Bad</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                
+                <div class="card-single-b">
+                    <div class="card-body">
+                        <div>
+                            <h5 class = "card-header-b">MOOD-ACTIVITY CHART</h5>
+                            <h4>Activities that make you HAPPY:</h4>
+                            <div id = "piechart" class = "piechart"></div> 
+                        </div>
+                    </div>
+                    <div class="card-footer-b">
+                        <a>You are feeling HAPPY today!!</a>
+                    </div>
+                </div>
+
+                <div class="card-single-c">
+                    <div class="card-body">
+                        <div>
+                            <h5 class = "card-header-c">MOOD CHART</h5>
+                            <h4>View your mood chart here!</h4>
+                            <div id = "moodchart" class = "moodchart"></div>
+                            <div>
+                                <a> View By: &emsp; </a>
+                                <div class="dropdown">
+                                    <button class="dropbtn">Day</button>
+                                    <div class="dropdown-content">
+                                        <a href="#">Day</a>
+                                        <a href="#">Week</a>
+                                        <a href="#">Month</a>
+                                        <a href="#">Year</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer-c">
+                        
+                    </div>
+                </div>
+
+                <div class="card-single-d">
+                    <div class="card-body">
+                        <div>
+                            <h5 class = "card-header-d">MOOD COUNT</h5>
+                            <h4>View your mood count here!</h4>
+                            <div id = "moodcount" class = "moodcount"></div>
+                        </div>
+                    </div>
+                    <div class="card-footer-d">
+                        <a>You are mostly happy!</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+    </div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <script type="text/javascript">
+        // Load google charts
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        // Draw the chart and set the chart values
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Task', 'Task Count'],
+        ['Eat with Friends', 2],
+        ['Watch TV', 4],
+        ['Yoga Time', 2],
+        ['Sleep', 9]
+        ]);
+
+        // Optional; add a title and set the width and height of the chart
+        var options = {
+            'title':'', 
+            'backgroundColor': '',
+            slices: {0: {color: '#ffa600'}, 1:{color: '#ff6361'}, 2:{color: '#bc5090'}, 3: {color: '#58508d'}, 4:{color: '#003f5c'}}
+        };
+
+        // Display the chart inside the <div> element with id="piechart"
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+        }
+        </script>
+
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+
+                var data = new google.visualization.DataTable();
+                data.addColumn('date', 'Date');
+                data.addColumn('number', 'Mood');
+
+                data.addRows([
+                [new Date(2021, 0, 1),4],[new Date(2021, 0, 2),5],
+                [new Date(2021, 0, 3),3],[new Date(2021, 0, 4),2],
+                [new Date(2021, 0, 5),1],[new Date(2021, 0, 6),4],
+                [new Date(2021, 0, 7),3], [new Date(2021, 0, 8),4]
+                ]);
+
+
+                var options = {
+                title: '',
+                'backgroundColor': '',
+                hAxis: {
+                    format: 'M/d/yy',
+                    gridlines: {count: 15}
+                },
+                vAxis: {
+                    gridlines: {color: 'none'},
+                    minValue: 1
+                }
+                };
+
+                var chart = new google.visualization.LineChart(document.getElementById('moodchart'));
+
+                chart.draw(data, options);
+            }
+        </script>
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+                ["Mood", "Count", { role: "style" } ],
+                ["Ecstatic", 1, "#F28775"],
+                ["Happy", 3, "#EAE48F"],
+                ["Fair", 2, "#D9B29C"],
+                ["Uncomfortable", 2, "#7F7601"],
+                ["Bad", 1, "color: #02323A"]
+              ]);
+        
+              var view = new google.visualization.DataView(data);
+              view.setColumns([0, 1,
+                               { calc: "stringify",
+                                 sourceColumn: 1,
+                                 type: "string",
+                                 role: "annotation" },
+                               2]);
+        
+              var options = {
+                title: "Mood Count: 9 ",
+                'backgroundColor': '',
+                bar: {groupWidth: "95%"},
+                legend: { position: "none" },
+              };
+              var chart = new google.visualization.BarChart(document.getElementById("moodcount"));
+              chart.draw(view, options);
+          }
+        </script>
+</body>
+</html>
