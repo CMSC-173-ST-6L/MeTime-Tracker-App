@@ -1,0 +1,96 @@
+main {
+  background-color: #e2fffc;
+}
+.journal-container {  
+  padding-top: 50px;
+  padding-left: 25px;
+  display: inline-flex;
+  margin-top: 50px;
+  margin-left: 25px;
+}
+
+.journalSideTitle, .journalDelete {
+  background-color: #05BCAB;
+  padding: 10px;
+  /* border-bottom: 1px solid black; */
+  margin-bottom: 1px;
+}
+.journalSideTitle {
+  width: 80%;
+}
+
+.journalSideTitle:hover {
+  background-color: #05BCAB;
+  cursor: pointer;
+}
+
+.currentJournalTitle {
+  border-left: 3px solid black;
+  padding-left: 10px;
+  width: 700px;
+  margin-bottom: 10px;
+  font-size: 36px;
+  display: inline-block;
+}
+
+.currentJournalBox {
+  height: 60vh;
+  width: 700px;
+  white-space: pre;
+  overflow-y: scroll;
+  padding: 0.5in;
+  border: 1px solid black;
+}
+
+.ti-close {
+  background-color: #FF1744;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1px;
+  color: white;
+  cursor: pointer;
+  border: '1px solid black';;
+}
+.ti-close:hover {
+  background-color: darkred;
+}
+
+#journalHeader {
+  color: white;
+  background: #009688;
+  padding: 8px 0px 8px 0px;
+}
+
+#addJournalBtn {
+  color: white;
+  border: none;
+  margin-bottom: 1px;
+  font-weight: 500;
+  background: #009688;
+  padding: 10px;
+  width: 100%;
+  font-size: 1.8em;
+}
+#addJournalBtn:hover {
+  cursor: pointer;
+}
+
+
+#journals {
+  flex: 1;
+  width: 300px;
+  /* border: 2px solid yellow; */
+  margin-right: 50px;
+  text-align: center;
+  overflow-y: scroll;
+  max-height: 70vh;
+  height: 70vh;
+}  
+.currentJournalTitle:focus, #currentJournalBox:focus {
+  outline: none;
+}
+#newJournalContainer {
+    margin-right: 20px;
+} 

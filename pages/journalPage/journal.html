@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>MeTime/dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="./dashboardstyle.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <input type="checkbox" id="sidebar-toggle">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3 class="brand">
+                <span class="ti-unlink"></span> 
+                <span>MeTime</span>
+            </h3> 
+            <label for="sidebar-toggle" class="ti-menu-alt"></label>
+        </div>
+        
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="../dashboardPage/dashboard.html">
+                        <span class="ti-home"></span>
+                        <span>Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../plannerPage/planner.html">
+                        <span class="ti-calendar"></span>
+                        <span>Planner</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="journal.html">
+                        <span class="ti-agenda"></span>
+                        <span>Journal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../moodtrackerPage/moodtracker.html">
+                        <span class="ti-face-smile"></span>
+                        <span>Mood Tracker</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../energylevelPage/energylevel.html">
+                        <span class="ti-time"></span>
+                        <span>Energy Level</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span class="ti-book"></span>
+                        <span>Contacts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../index.html">
+                        <span class="ti-arrow-left"></span>
+                        <span>Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <div class="main-content">
+        <header>
+            <div class="search-wrapper">
+                <span class="ti-search" style="padding-right: 15px;"></span>
+                <input type="search" placeholder="Search. .">
+            </div>
+            
+            <div class="social-icons">
+                <span class="ti-bell"></span>
+                <span class="ti-youtube"></span>
+                <span class="ti-twitter"></span>
+                <span class="ti-facebook"></span>
+                <div></div>
+            </div>
+        </header>
+        
+        <main>
+          <div class='journal-container'>
+            <div id="journals">
+              <button id="addJournalBtn"> + ADD JOURNAL</button>
+              <!-- <h2 id="journalHeader">Journal List</h2> -->
+              <div id="journalList">
+              </div>
+            </div>
+            <div id="newJournalContainer"></div>
+          </div>
+        </main>
+        
+    </div>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>
