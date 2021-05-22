@@ -106,6 +106,11 @@
                                 </div>
                             </div>
                     </div>
+                    <div class= "card-footer-d">
+                        <a><center>You are feeling HAPPY today! <br>Have a blast!
+                            <span class="ti-face-smile"></span></center>
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="card-single-b">
@@ -131,10 +136,40 @@
                         
                     </div>
                     <div class="card-footer-b">
-                        <a>You are feeling HAPPY today! Enjoy your day!
-                            <span class="ti-face-smile"></span>
-                        </a>
+                        
                     </div>
+                    <script type="text/javascript">
+                        // Load google charts
+                        google.charts.load('current', {'packages':['corechart']});
+                        google.charts.setOnLoadCallback(drawChart);
+                    
+                        // Draw the chart and set the chart values
+                        function drawChart() {
+                        var data = google.visualization.arrayToDataTable([
+                        ['Task', 'Task Count'],
+                        ['Task 1', 2],
+                        ['Task 2', 1],
+                        ['Task 3', 1],
+                        ]);
+                    
+                        // Optional; add a title and set the width and height of the chart
+                        var options = {
+                            'title':'', 
+                            'backgroundColor': '',
+                            width:'100%',
+                            height:'500px',
+                            slices: {0: {color: '#ffa600'}, 1:{color: '#ff6361'}, 2:{color: '#bc5090'}, 3: {color: '#58508d'}, 4:{color: '#003f5c'}}
+                        };
+                    
+                        // Display the chart inside the <div> element with id="piechart"
+                        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                        chart.draw(data, options);
+                    
+                        $(window).resize(function(){
+                            drawChart();
+                        });
+                        }
+                        </script>
                 </div>
 
                 <div class="card-single-c">
@@ -161,12 +196,50 @@
                     <div class="card-footer-c">
                         <a>Don't forget to rest after a tiring day!</a>
                     </div>
+                    <script type="text/javascript">
+                        google.charts.load('current', {'packages':['corechart']});
+                        google.charts.setOnLoadCallback(drawChart);
+                
+                        function drawChart() {
+                
+                            var data = new google.visualization.DataTable();
+                            data.addColumn('date', 'Date');
+                            data.addColumn('number', 'Mood');
+                
+                            data.addRows([
+                            [new Date(2021, 4, 19),4],[new Date(2021, 4, 20),5],
+                            [new Date(2021, 4, 21),2],[new Date(2021, 4, 22),4],
+                            [new Date(2021, 4, 23),3]
+                            ]);
+                
+                            var options = {
+                            title: '',
+                            'backgroundColor': '',
+                            hAxis: {
+                                format: 'M/d/yy',
+                                gridlines: {count: 15}
+                            },
+                            vAxis: {
+                                gridlines: {color: 'none'},
+                                minValue: 1
+                            }
+                            };
+                
+                            var chart = new google.visualization.LineChart(document.getElementById('moodchart'));
+                
+                            chart.draw(data, options);
+                
+                            $(window).resize(function(){
+                                drawChart();
+                            });
+                        }
+                    </script>
                 </div>
 
                 <div class="card-single-d">
                     <div>
                         <h5 class = "card-header-d">MOOD COUNT</h5>
-                        <h4>&emsp;Total Mood Count: 9</h4>
+                        <h4>&emsp;Total Mood Count: 5</h4>
                         <div id = "moodcount" class = "moodcount"></div>
                     </div>
                     <div class="card-body">
@@ -175,120 +248,45 @@
                     <div class="card-footer-d">
                         <a>You are HAPPY most of the time!</a>
                     </div>
+                    <script type="text/javascript">
+                        google.charts.load("current", {packages:["corechart"]});
+                        google.charts.setOnLoadCallback(drawChart);
+                        function drawChart() {
+                            var data = google.visualization.arrayToDataTable([
+                            ["Mood", "Count", { role: "style" } ],
+                            ["Ecstatic", 1, "#F28775"],
+                            ["Happy", 2, "#EAE48F"],
+                            ["Fair", 1, "#D9B29C"],
+                            ["Uncomfortable", 1, "#7F7601"],
+                            ["Bad", 0, "color: #02323A"]
+                            ]);
+                    
+                            var view = new google.visualization.DataView(data);
+                            view.setColumns([0, 1,
+                                            { calc: "stringify",
+                                                sourceColumn: 1,
+                                                type: "string",
+                                                role: "annotation" },
+                                            2]);
+                    
+                            var options = {
+                            title: "",
+                            'backgroundColor': '',
+                            bar: {groupWidth: "95%"},
+                            legend: { position: "none" },
+                            };
+                            var chart = new google.visualization.BarChart(document.getElementById("moodcount"));
+                            chart.draw(view, options);
+                
+                        $(window).resize(function(){
+                            drawChart();
+                        });
+                        }
+                    </script>
                 </div>
             </div>
         </main>
     </div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-        <script type="text/javascript">
-        // Load google charts
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
-
-        // Draw the chart and set the chart values
-        function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-        ['Task', 'Task Count'],
-        ['Eat with Friends', 2],
-        ['Watch TV', 4],
-        ['Yoga Time', 2],
-        ['Sleep', 9]
-        ]);
-
-        // Optional; add a title and set the width and height of the chart
-        var options = {
-            'title':'', 
-            'backgroundColor': '',
-            width:'100%',
-            height:'500px',
-            slices: {0: {color: '#ffa600'}, 1:{color: '#ff6361'}, 2:{color: '#bc5090'}, 3: {color: '#58508d'}, 4:{color: '#003f5c'}}
-        };
-
-        // Display the chart inside the <div> element with id="piechart"
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-        chart.draw(data, options);
-
-        $(window).resize(function(){
-            drawChart();
-        });
-        }
-        </script>
-
-        <script type="text/javascript">
-            google.charts.load('current', {'packages':['corechart']});
-            google.charts.setOnLoadCallback(drawChart);
-
-            function drawChart() {
-
-                var data = new google.visualization.DataTable();
-                data.addColumn('date', 'Date');
-                data.addColumn('number', 'Mood');
-
-                data.addRows([
-                [new Date(2021, 0, 1),4],[new Date(2021, 0, 2),5],
-                [new Date(2021, 0, 3),3],[new Date(2021, 0, 4),2],
-                [new Date(2021, 0, 5),1],[new Date(2021, 0, 6),4],
-                [new Date(2021, 0, 7),3], [new Date(2021, 0, 8),4]
-                ]);
-
-
-                var options = {
-                title: '',
-                'backgroundColor': '',
-                hAxis: {
-                    format: 'M/d/yy',
-                    gridlines: {count: 15}
-                },
-                vAxis: {
-                    gridlines: {color: 'none'},
-                    minValue: 1
-                }
-                };
-
-                var chart = new google.visualization.LineChart(document.getElementById('moodchart'));
-
-                chart.draw(data, options);
-
-                $(window).resize(function(){
-                    drawChart();
-                });
-            }
-        </script>
-        <script type="text/javascript">
-            google.charts.load("current", {packages:["corechart"]});
-            google.charts.setOnLoadCallback(drawChart);
-            function drawChart() {
-              var data = google.visualization.arrayToDataTable([
-                ["Mood", "Count", { role: "style" } ],
-                ["Ecstatic", 1, "#F28775"],
-                ["Happy", 3, "#EAE48F"],
-                ["Fair", 2, "#D9B29C"],
-                ["Uncomfortable", 2, "#7F7601"],
-                ["Bad", 1, "color: #02323A"]
-              ]);
-        
-              var view = new google.visualization.DataView(data);
-              view.setColumns([0, 1,
-                               { calc: "stringify",
-                                 sourceColumn: 1,
-                                 type: "string",
-                                 role: "annotation" },
-                               2]);
-        
-              var options = {
-                title: "",
-                'backgroundColor': '',
-                bar: {groupWidth: "95%"},
-                legend: { position: "none" },
-              };
-              var chart = new google.visualization.BarChart(document.getElementById("moodcount"));
-              chart.draw(view, options);
-
-            $(window).resize(function(){
-                drawChart();
-            });
-          }
-        </script>
 </body>
 </html>
