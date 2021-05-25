@@ -116,10 +116,10 @@
                 <div class="card-single-b">
                     <div>
                         <h5 class = "card-header-b">MOOD-ACTIVITY CHART</h5>
-                        <h4>&emsp;Activities that make you HAPPY:</h4>
+                        <h4>&emsp;Activities that make you feel Happy:</h4>
                         <div id = "piechart" class = "piechart"></div>
                         <div>
-                            <a> &emsp; View Activities that Make Me: &emsp; </a>
+                            <a> &emsp; View Activities that Make Me Feel: &emsp; </a>
                             <div class="dropdown">
                                 <button class="dropbtn3">Happy</button>
                                 <div class="dropdown-content">
@@ -147,9 +147,10 @@
                         function drawChart() {
                         var data = google.visualization.arrayToDataTable([
                         ['Task', 'Task Count'],
-                        ['Task 1', 2],
-                        ['Task 2', 1],
-                        ['Task 3', 1],
+                        ['Code', 1],
+                        ['Relax', 1],
+                        ['Social Media Browsing', 1],
+                        ['Breakfast', 1]
                         ]);
                     
                         // Optional; add a title and set the width and height of the chart
@@ -207,9 +208,11 @@
                             data.addColumn('number', 'Mood');
                 
                             data.addRows([
-                            [new Date(2021, 4, 19),4],[new Date(2021, 4, 20),5],
-                            [new Date(2021, 4, 21),2],[new Date(2021, 4, 22),4],
-                            [new Date(2021, 4, 23),3]
+                            [new Date(2021, 4, 19),3],
+                            [new Date(2021, 4, 20),3],
+                            [new Date(2021, 4, 21),2],
+                            [new Date(2021, 4, 22),3],
+                            [new Date(2021, 4, 23),3],
                             ]);
                 
                             var options = {
@@ -246,7 +249,7 @@
                         
                     </div>
                     <div class="card-footer-d">
-                        <a>You are HAPPY most of the time!</a>
+                        <a>You are feeling FAIR most of the time</a>
                     </div>
                     <script type="text/javascript">
                         google.charts.load("current", {packages:["corechart"]});
@@ -254,9 +257,9 @@
                         function drawChart() {
                             var data = google.visualization.arrayToDataTable([
                             ["Mood", "Count", { role: "style" } ],
-                            ["Ecstatic", 1, "#F28775"],
-                            ["Happy", 2, "#EAE48F"],
-                            ["Fair", 1, "#D9B29C"],
+                            ["Ecstatic", 0, "#F28775"],
+                            ["Happy", 0, "#EAE48F"],
+                            ["Fair", 4, "#D9B29C"],
                             ["Uncomfortable", 1, "#7F7601"],
                             ["Bad", 0, "color: #02323A"]
                             ]);
